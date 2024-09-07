@@ -26,8 +26,12 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/#"),
                     navbar_link("Wiki", "/#"),
+                    navbar_link("About Us", "/#"),
                     justify="end",
                     spacing="5",
+                ),
+                rx.hstack(
+                    rx.color_mode.button(),
                 ),
                 justify="between",
                 align="center",
@@ -60,11 +64,5 @@ def navbar() -> rx.Component:
         #         align="center",
         #     ),
         # ),
-        bg=rx.color("accent", 3),
-        padding=styles.Size.S,
-        position="fixed",
-        top="0px",
-        z_index="999",
-        width="100%",
-        heigth=styles.Size.XL
+        style=styles.navbar_style
     )
