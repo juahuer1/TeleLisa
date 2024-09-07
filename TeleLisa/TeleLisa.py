@@ -4,7 +4,8 @@ import reflex as rx
 
 from rxconfig import config
 
-from Telelisa.components.navbar import navbar
+from TeleLisa.components.navbar import navbar
+from TeleLisa.components.header import header
 
 
 class State(rx.State):
@@ -20,6 +21,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
+                header(),
                 rx.heading("Welcome to Reflex!", size="9"),
                 rx.text(
                     "Get started by editing ",
@@ -31,9 +33,10 @@ def index() -> rx.Component:
                     href="https://reflex.dev/docs/getting-started/introduction/",
                     is_external=True,
                 ),
-                spacing="5",
-                justify="center",
-                min_height="85vh",
+                
+                # spacing="5",
+                # justify="center",
+                # min_height="85vh",
             ),
         ),
         rx.logo(),
