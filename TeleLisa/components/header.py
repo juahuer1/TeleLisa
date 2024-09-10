@@ -8,9 +8,9 @@ def header() -> rx.Component:
         rx.avatar(
             src=config.favicon,
             size="8",
+            radius="full",
             style=styles.avatar_style,
-            radius="full"
-            ),
+        ),
         rx.vstack(
             rx.heading(
                 "Bienvenido a TeleLisa",
@@ -21,5 +21,5 @@ def header() -> rx.Component:
                 size="3",
             )
         ),
-        style=styles.header_style
+        style=styles.header_style,
     )

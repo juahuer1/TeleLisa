@@ -9,6 +9,12 @@ class Size(Enum):
     XXL="6em"
 
 ######## STYLES DESKTOP
+## MAIN PAGE
+main_page_style = dict(
+    max_width="85%",
+    align_items="center"
+)
+
 # NAVBAR
 navbar_style = dict(
     bg=rx.color("accent", 3),
@@ -39,7 +45,13 @@ header_style = dict(
 
 avatar_style = dict(
     margin_left = Size.S,
-    margin_right = Size.S   
+    margin_right = Size.S,  
+)
+
+# TV
+tv_video_style = dict(
+    flex_shrink = "0",  # No se encogerá
+    flex_grow = "0",    # No crecerá
 )
 
 

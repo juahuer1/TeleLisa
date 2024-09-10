@@ -3,8 +3,10 @@
 import reflex as rx
 
 from rxconfig import config
+import TeleLisa.styles.styles as styles
 from TeleLisa.components.navbar import navbar
 from TeleLisa.components.header import header
+from TeleLisa.components.tv import tv
 
 class State(rx.State):
     """The app state."""
@@ -18,21 +20,8 @@ def index() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                # rx.heading("Welcome to Reflex!", size="9"),
-                # rx.text(
-                #     "Get started by editing ",
-                #     rx.code(f"{config.app_name}/{config.app_name}.py"),
-                #     size="5",
-                # ),
-                # rx.link(
-                #     rx.button("Check out our docs!"),
-                #     href="https://reflex.dev/docs/getting-started/introduction/",
-                #     is_external=True,
-                # ),
-                
-                # spacing="5",
-                # justify="center",
-                # min_height="85vh",
+                tv(),
+                style=styles.main_page_style
             ),
         ),
         rx.logo(),
