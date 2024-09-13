@@ -6,9 +6,7 @@ from rxconfig import config
 def tv() -> rx.Component:
     return rx.hstack(
         rx.video(
-            url="https://www.youtube.com/embed/9bZkp7q19f0",
-            width="40em", # Para conseguir la resolución 4/3 de las teles antiguas independientemente del tamaño de la pantalla (640*480)px
-            height="30em",
+            url="/video/test.mp4",
             style=styles.tv_video_style
         ),
         rx.vstack(
@@ -23,6 +21,5 @@ def tv() -> rx.Component:
                 rx.button("Reproducir", color_scheme="blue")
             ),
             rx.text("Descripcion del capítulo..."),
-        )
-        
+        ),        
     ),

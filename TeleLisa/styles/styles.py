@@ -8,11 +8,26 @@ class Size(Enum):
     XL= "4em"
     XXL="6em"
 
+spacing = 5
+
+spacing_values = [
+    4,   # --space-1
+    8,   # --space-2
+    12,  # --space-3
+    16,  # --space-4
+    24,  # --space-5
+    32,  # --space-6
+    40,  # --space-7
+    48,  # --space-8
+    64   # --space-9
+]
+
 ######## STYLES DESKTOP
 ## MAIN PAGE
 main_page_style = dict(
     max_width="85%",
-    align_items="center"
+    align_items="center",
+    padding_top="68px"
 )
 
 # NAVBAR
@@ -39,8 +54,7 @@ navbar_image_style = dict(
 
 # HEADER
 header_style = dict(
-    margin_top=Size.XL,
-    padding = Size.L,
+    margin_top=f"{spacing_values[spacing-1]}px", # En reflex depende tambien de data-scaling pero de momento funciona bien así
 )
 
 avatar_style = dict(

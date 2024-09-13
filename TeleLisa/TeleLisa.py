@@ -21,7 +21,8 @@ def index() -> rx.Component:
             rx.vstack(
                 header(),
                 tv(),
-                style=styles.main_page_style
+                style=styles.main_page_style,
+                spacing=f"{styles.spacing}"
             ),
         ),
         rx.logo(),
