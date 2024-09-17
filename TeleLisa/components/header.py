@@ -9,7 +9,7 @@ def header() -> rx.Component:
             src=config.favicon,
             size="8",
             radius="full",
-            style=styles.avatar_style,
+            style=styles.header.avatar_style,
         ),
         rx.vstack(
             rx.heading(
@@ -21,5 +21,5 @@ def header() -> rx.Component:
                 size="3",
             )
         ),
-        style=styles.header_style,
+        style=styles.header.header_style,
     )

@@ -7,7 +7,7 @@ def tv() -> rx.Component:
     return rx.hstack(
         rx.video(
             url="/video/test.mp4",
-            style=styles.tv_video_style
+            style=styles.tv.tv_video_style
         ),
         rx.vstack(
             rx.text("Puedes seleccionar otro capítulo para reproducir:"),
@@ -21,5 +21,6 @@ def tv() -> rx.Component:
                 rx.button("Reproducir", color_scheme="blue")
             ),
             rx.text("Descripcion del capítulo..."),
+            style=styles.tv.vstack_style
         ),        
     ),

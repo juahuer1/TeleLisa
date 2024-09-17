@@ -15,17 +15,17 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     rx.image(
                         src=config.favicon,
-                        style=styles.navbar_image_style
+                        style=styles.navbar.navbar_image_style
                     ),
                     rx.heading(
                         config.app_name,
-                        style=styles.navbar_title_style
+                        style=styles.navbar.navbar_title_style
                     ),
                     align="center",
                 ),
                 rx.hstack(
                     navbar_link("Home", "/#"),
-                    navbar_link("Wiki", "/#"),
+                    navbar_link("Wiki", "/wiki"),
                     navbar_link("About Us", "/#"),
                     justify="end",
                     spacing="5",
@@ -64,5 +64,5 @@ def navbar() -> rx.Component:
         #         align="center",
         #     ),
         # ),
-        style=styles.navbar_style
+        style=styles.navbar.navbar_style
     )
