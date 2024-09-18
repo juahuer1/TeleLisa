@@ -22,5 +22,6 @@ def tv() -> rx.Component:
             ),
             rx.text("Descripcion del capítulo..."),
             style=styles.tv.vstack_style
-        ),        
+        ),  
+        heigth="100%"
     ),

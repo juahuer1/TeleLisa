@@ -25,7 +25,7 @@ def footer() -> rx.Component:
                         href="https://reflex.dev/",
                     ),
                     rx.image(
-                        src="/reflex.svg",
+                        src="/img/reflex.svg",
                     ),
                     style=styles.footer.powered_by_container
                 ),

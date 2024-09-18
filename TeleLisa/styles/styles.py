@@ -29,10 +29,11 @@ spacing_values = [
 body_style = dict(
     max_width="85%",
     align_items="center",
+    overflow="auto",
 )
 
 main_page_style = dict(
-    padding_top="68px"
+    padding_top="68px",
 )
 
 # NAVBAR
@@ -55,7 +56,7 @@ class navbar():
     navbar_image_style = dict(
         width="2.25em",
         height="auto",
-        border_radius="25%",
+        # border_radius="25%",
     )
 
 # FOOTER
@@ -107,6 +108,12 @@ class season_menu():
     menu_style = dict(
         white_space="nowrap",
         margin_top=f"{spacing_values[spacing-1]}px",
+        width="100%"
+    )
+
+    menu_container_style = dict(
+        width = "100%",
+        display="grid"
     )
 
 

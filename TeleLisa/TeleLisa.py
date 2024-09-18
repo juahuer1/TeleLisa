@@ -46,5 +46,8 @@ def wiki() -> rx.Component:
 
 
 app = rx.App()
+rx.breakpoints(
+    
+)
 app.add_page(index)
 app.add_page(wiki)

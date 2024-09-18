@@ -6,7 +6,7 @@ from rxconfig import config
 def header() -> rx.Component:
     return rx.hstack(
         rx.avatar(
-            src=config.favicon,
+            src="/img/lisa-feliz.jpg",
             size="8",
             radius="full",
             style=styles.header.avatar_style,
