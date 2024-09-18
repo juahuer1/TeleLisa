@@ -10,6 +10,8 @@ class Size(Enum):
     L = "2em"
     XL= "4em"
     XXL="6em"
+    Extra_4="10em"
+    Extra_5="15em"
 
 
 spacing_values = [

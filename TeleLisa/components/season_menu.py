@@ -31,7 +31,7 @@ first_block = rx.hstack(
     rx.link(rx.text("Temporada 9"), href="#"),
     rx.link(rx.text("Temporada 10"), href="#"),
     display=menuState.first_items_display,
-    width="100%"
+    justify="center"
 )
 
 second_block = rx.hstack(
@@ -46,6 +46,7 @@ second_block = rx.hstack(
     rx.link(rx.text("Temporada 19"), href="#"),
     rx.link(rx.text("Temporada 20"), href="#"),
     display=menuState.last_items_display,
+    justify="center"
 )
 
 def season_menu() -> rx.Component:

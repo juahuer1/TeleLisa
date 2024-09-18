@@ -9,6 +9,7 @@ from TeleLisa.components.header import header
 from TeleLisa.components.tv import tv
 from TeleLisa.components.footer import footer
 from TeleLisa.components.season_menu import season_menu
+from TeleLisa.components.episode_view import episode_view
 
 class State(rx.State):
     """The app state."""
@@ -37,7 +38,9 @@ def wiki() -> rx.Component:
         rx.center(
             rx.vstack(
                 season_menu(),   
-                style=styles.body_style
+                episode_view(),
+                style=styles.body_style,
+                spacing=f"{styles.spacing}"
             ),
         ),
         footer(),
