@@ -25,7 +25,7 @@ def index() -> rx.Component:
                 header(),
                 tv(),
                 style=styles.body_style,
-                spacing=f"{styles.spacing}"
+                spacing=f"{styles.SPACING}"
             ),
         ),
         footer(),
@@ -40,7 +40,7 @@ def wiki() -> rx.Component:
                 season_menu(),   
                 episode_view(),
                 style=styles.body_style,
-                spacing=f"{styles.spacing}"
+                spacing=f"{styles.SPACING}"
             ),
         ),
         footer(),
@@ -49,8 +49,5 @@ def wiki() -> rx.Component:
 
 
 app = rx.App()
-rx.breakpoints(
-    
-)
 app.add_page(index)
 app.add_page(wiki)

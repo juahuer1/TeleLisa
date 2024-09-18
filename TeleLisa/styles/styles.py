@@ -1,8 +1,8 @@
 import reflex as rx
 from enum import Enum
 
-######## VARS
-spacing = 5
+######## CONSTANTS
+SPACING = 5
 
 class Size(Enum):
     XS = "0.8em"
@@ -14,17 +14,7 @@ class Size(Enum):
     Extra_5="15em"
 
 
-spacing_values = [
-    4,   # --space-1
-    8,   # --space-2
-    12,  # --space-3
-    16,  # --space-4
-    24,  # --space-5
-    32,  # --space-6
-    40,  # --space-7
-    48,  # --space-8
-    64   # --space-9
-]
+spacing_values = [4,8,12,16,24,32,40,48,64]
 
 ######## STYLES DESKTOP
 ## MAIN PAGE
@@ -32,6 +22,7 @@ body_style = dict(
     max_width="85%",
     align_items="center",
     overflow="auto",
+    margin_y=f"{spacing_values[SPACING-1]}px"
 )
 
 main_page_style = dict(
@@ -58,7 +49,6 @@ class navbar():
     navbar_image_style = dict(
         width="2.25em",
         height="auto",
-        # border_radius="25%",
     )
 
 # FOOTER
@@ -67,7 +57,6 @@ class footer():
         width="100%",
         padding_left = Size.S,
         padding_right = Size.S,
-        margin_top=f"{spacing_values[spacing-1]}px"
     )
 
     powered_by_container = dict(
@@ -86,10 +75,6 @@ class footer():
 
 # HEADER
 class header():
-    header_style = dict(
-        margin_top=f"{spacing_values[spacing-1]}px", # En reflex depende tambien de data-scaling pero de momento funciona bien así
-    )
-
     avatar_style = dict(
         margin_left = Size.S,
     )
@@ -109,26 +94,12 @@ class tv():
 class season_menu():
     menu_style = dict(
         white_space="nowrap",
-        margin_top=f"{spacing_values[spacing-1]}px",
         width="100%"
     )
 
     menu_container_style = dict(
         width = "100%",
-        display="grid"
     )
 
 
 ######## STYLES MOBILE
-## NAVBAR
-
-# navbar_title_style = dict(
-#     size="6", 
-#     weight="bold"
-# )
-
-# navbar_image_style = dict(
-#     width="2em",
-#     height="auto",
-#     border_radius="25%",
-# )

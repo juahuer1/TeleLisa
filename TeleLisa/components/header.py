@@ -21,5 +21,4 @@ def header() -> rx.Component:
                 size="3",
             )
         ),
-        style=styles.header.header_style,
     )
