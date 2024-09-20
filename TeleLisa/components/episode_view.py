@@ -18,7 +18,7 @@ def episode_view()->rx.Component:
                 ),
             ),
             columns="3",
-            spacing=f"{styles.SPACING}",
+            spacing=styles.Spacing.DEFAULT.value,
             width="100%",
         )
     )

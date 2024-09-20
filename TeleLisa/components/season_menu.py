@@ -19,34 +19,44 @@ class menuState(rx.State):
         self.show_more_button_disabled = False
         self.show_less_button_disabled = True
 
+temporadas = [f"Temporada {i}" for i in range(1, 11)]
+
 first_block = rx.hstack(
-    rx.link(rx.text("Temporada 1"), href="#"),
-    rx.link(rx.text("Temporada 2"), href="#"),
-    rx.link(rx.text("Temporada 3"), href="#"),
-    rx.link(rx.text("Temporada 4"), href="#"),
-    rx.link(rx.text("Temporada 5"), href="#"),
-    rx.link(rx.text("Temporada 6"), href="#"),
-    rx.link(rx.text("Temporada 7"), href="#"),
-    rx.link(rx.text("Temporada 8"), href="#"),
-    rx.link(rx.text("Temporada 9"), href="#"),
-    rx.link(rx.text("Temporada 10"), href="#"),
+    rx.foreach(
+        temporadas,
+        lambda temporada: rx.link(
+            rx.button(
+                temporada,
+                radius="medium",
+                variant="ghost",
+                size="3"
+            ),
+            href="#"
+        )
+    ),
     display=menuState.first_items_display,
-    justify="center"
+    justify="center",
+    spacing=styles.Spacing.DEFAULT.value
 )
 
+temporadas = [f"Temporada {i}" for i in range(11, 21)]
+
 second_block = rx.hstack(
-    rx.link(rx.text("Temporada 11"), href="#"),
-    rx.link(rx.text("Temporada 12"), href="#"),
-    rx.link(rx.text("Temporada 13"), href="#"),
-    rx.link(rx.text("Temporada 14"), href="#"),
-    rx.link(rx.text("Temporada 15"), href="#"),
-    rx.link(rx.text("Temporada 16"), href="#"),
-    rx.link(rx.text("Temporada 17"), href="#"),
-    rx.link(rx.text("Temporada 18"), href="#"),
-    rx.link(rx.text("Temporada 19"), href="#"),
-    rx.link(rx.text("Temporada 20"), href="#"),
+    rx.foreach(
+        temporadas,
+        lambda temporada: rx.link(
+            rx.button(
+                temporada,
+                radius="medium",
+                variant="ghost",
+                size="3"
+            ),
+            href="#"
+        )
+    ),
     display=menuState.last_items_display,
-    justify="center"
+    justify="center",
+    spacing=styles.Spacing.DEFAULT.value
 )
 
 def season_menu() -> rx.Component:
@@ -68,7 +78,6 @@ def season_menu() -> rx.Component:
                 disabled=menuState.show_more_button_disabled,
                 on_click=menuState.showMore
             ),
-            
             justify="between",
             align="center",
             style=styles.season_menu.menu_style,

@@ -4,6 +4,7 @@ import reflex as rx
 
 from rxconfig import config
 import TeleLisa.styles.styles as styles
+from TeleLisa.styles.component_styles import BASE_STYLES
 from TeleLisa.components.navbar import navbar
 from TeleLisa.components.header import header
 from TeleLisa.components.tv import tv
@@ -25,7 +26,7 @@ def index() -> rx.Component:
                 header(),
                 tv(),
                 style=styles.body_style,
-                spacing=f"{styles.SPACING}"
+                spacing=styles.Spacing.DEFAULT.value
             ),
         ),
         footer(),
@@ -40,7 +41,7 @@ def wiki() -> rx.Component:
                 season_menu(),   
                 episode_view(),
                 style=styles.body_style,
-                spacing=f"{styles.SPACING}"
+                spacing=styles.Spacing.DEFAULT.value
             ),
         ),
         footer(),
@@ -48,6 +49,8 @@ def wiki() -> rx.Component:
     )
 
 
-app = rx.App()
+app = rx.App(
+    style=BASE_STYLES
+)
 app.add_page(index)
 app.add_page(wiki)

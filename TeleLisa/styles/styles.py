@@ -4,6 +4,17 @@ from enum import Enum
 ######## CONSTANTS
 SPACING = 5
 
+class TextSize(Enum):
+    S = "2"
+    M = "3"
+    L = "5"
+    XL = "7"
+
+class Spacing(Enum):
+    SMALL = "3"
+    DEFAULT = "5"
+    BIG = "7"
+
 class Size(Enum):
     XS = "0.8em"
     S = "1em"
@@ -13,7 +24,6 @@ class Size(Enum):
     Extra_4="10em"
     Extra_5="15em"
 
-
 spacing_values = [4,8,12,16,24,32,40,48,64]
 
 ######## STYLES DESKTOP
@@ -22,7 +32,7 @@ body_style = dict(
     max_width="85%",
     align_items="center",
     overflow="auto",
-    margin_y=f"{spacing_values[SPACING-1]}px"
+    margin_y=f"{spacing_values[SPACING]}px"
 )
 
 main_page_style = dict(
@@ -47,7 +57,7 @@ class navbar():
     )
 
     navbar_image_style = dict(
-        width="2.25em",
+        width=Size.L,
         height="auto",
     )
 
@@ -89,6 +99,10 @@ class tv():
     vstack_style = dict(
         margin_left = Size.S,
     )
+
+    hstack_container_style = dict(
+        heigth = "100%"
+    ) 
 
 # SEASON MENU
 class season_menu():

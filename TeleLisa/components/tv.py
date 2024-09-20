@@ -10,7 +10,10 @@ def tv() -> rx.Component:
             style=styles.tv.tv_video_style
         ),
         rx.vstack(
-            rx.text("Puedes seleccionar otro capítulo para reproducir:"),
+            rx.text(
+                "Puedes seleccionar otro capítulo para reproducir:",
+                size=styles.TextSize.M.value
+            ),
             rx.hstack(
                  rx.select(["Temporada 1", "Temporada 2", "Temporada 3", "Temporada 4", "Temporada 5"],
                     default_value="Temporada 1"      
@@ -23,5 +26,5 @@ def tv() -> rx.Component:
             rx.text("Descripcion del capítulo..."),
             style=styles.tv.vstack_style
         ),  
-        heigth="100%"
+        style=styles.tv.hstack_container_style
     ),

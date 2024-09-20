@@ -1,14 +1,15 @@
 import reflex as rx
 import TeleLisa.styles.styles as styles
+from rxconfig import config
 
 def social_link(icon: str, href: str) -> rx.Component:
-    return rx.link(rx.icon(icon), href=href)
+    return rx.link(rx.icon(icon), href=href, is_external=True)
 
 
 def socials() -> rx.Component:
     return rx.flex(
-        social_link("github", "/#"),
-        spacing="3",
+        social_link("github", config.github),
+        spacing=styles.Spacing.SMALL.value,
         justify="end",
         style=styles.footer.socials_def
     )
@@ -23,6 +24,7 @@ def footer() -> rx.Component:
                     rx.link(
                         rx.text("Powered by"), 
                         href="https://reflex.dev/",
+                        is_external=True
                     ),
                     rx.image(
                         src="/img/reflex.svg",

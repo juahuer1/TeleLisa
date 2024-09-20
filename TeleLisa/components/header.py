@@ -14,11 +14,11 @@ def header() -> rx.Component:
         rx.vstack(
             rx.heading(
                 "Bienvenido a TeleLisa",
-                size="7"
+                size=styles.TextSize.XL.value
                 ),
             rx.text(
                 "No has fantaseado con poder ver Los Simpsons 24/7?",
-                size="3",
+                size=styles.TextSize.M.value,
             )
         ),
     )

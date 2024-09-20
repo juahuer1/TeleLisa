@@ -5,7 +5,14 @@ from rxconfig import config
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.text(text, size="4", weight="medium"), href=url
+        rx.button(
+            text,
+            variant="surface",
+            size=styles.TextSize.M.value,
+            color_scheme="yellow",
+            radius="medium"
+        ),
+        href=url,
     )
 
 def navbar() -> rx.Component:
@@ -26,15 +33,15 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/#"),
                     navbar_link("Wiki", "/wiki"),
-                    # navbar_link("About Us", "/#"),
                     justify="end",
-                    spacing="5",
+                    spacing=styles.Spacing.DEFAULT.value,
                 ),
                 rx.hstack(
                     rx.color_mode.button(),
                 ),
                 justify="between",
                 align="center",
+                # width="auto !important",
             ),
         ),
         # rx.mobile_and_tablet(
