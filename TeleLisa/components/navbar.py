@@ -1,5 +1,6 @@
 import reflex as rx
 import TeleLisa.styles.styles as styles
+from TeleLisa.styles.colors import Colors, TextColors
 from rxconfig import config
 
 
@@ -9,8 +10,8 @@ def navbar_link(text: str, url: str) -> rx.Component:
             text,
             variant="surface",
             size=styles.TextSize.M.value,
-            color_scheme="yellow",
-            radius="medium"
+            radius="medium",
+            style=styles.navbar.navbar_button
         ),
         href=url,
     )
@@ -33,15 +34,9 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/#"),
                     navbar_link("Wiki", "/wiki"),
-                    justify="end",
                     spacing=styles.Spacing.DEFAULT.value,
                 ),
-                rx.hstack(
-                    rx.color_mode.button(),
-                ),
-                justify="between",
                 align="center",
-                # width="auto !important",
             ),
         ),
         # rx.mobile_and_tablet(

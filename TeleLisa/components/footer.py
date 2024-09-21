@@ -1,9 +1,14 @@
 import reflex as rx
 import TeleLisa.styles.styles as styles
+from TeleLisa.styles.colors import Colors
 from rxconfig import config
 
 def social_link(icon: str, href: str) -> rx.Component:
-    return rx.link(rx.icon(icon), href=href, is_external=True)
+    return rx.link(
+        rx.icon(icon),
+        href=href,
+        is_external=True,
+    )
 
 
 def socials() -> rx.Component:
@@ -22,7 +27,10 @@ def footer() -> rx.Component:
             rx.hstack(
                 rx.hstack(
                     rx.link(
-                        rx.text("Powered by"), 
+                        rx.text(
+                            "Powered by",
+                            color = Colors.PRIMARY.value
+                        ), 
                         href="https://reflex.dev/",
                         is_external=True
                     ),

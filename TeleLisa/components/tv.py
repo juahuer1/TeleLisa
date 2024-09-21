@@ -16,12 +16,17 @@ def tv() -> rx.Component:
             ),
             rx.hstack(
                  rx.select(["Temporada 1", "Temporada 2", "Temporada 3", "Temporada 4", "Temporada 5"],
-                    default_value="Temporada 1"      
+                    default_value="Temporada 1",
+                    variant="soft",
+                    color_scheme="brown" 
                 ),
                 rx.select(["Episodio 1", "Episodio 2", "Episodio 3", "Episodio 4", "Episodio 5"],
-                    default_value="Episodio 1"
+                    default_value="Episodio 1",
+                    variant="soft",
+                    color_scheme="brown"
                 ),
-                rx.button("Reproducir", color_scheme="blue")
+                rx.button("Reproducir"),
+                align="center"
             ),
             rx.text("Descripcion del capítulo..."),
             style=styles.tv.vstack_style

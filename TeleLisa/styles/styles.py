@@ -1,9 +1,7 @@
 import reflex as rx
 from enum import Enum
-
+from .colors import Colors, TextColors
 ######## CONSTANTS
-SPACING = 5
-
 class TextSize(Enum):
     S = "2"
     M = "3"
@@ -32,17 +30,19 @@ body_style = dict(
     max_width="85%",
     align_items="center",
     overflow="auto",
-    margin_y=f"{spacing_values[SPACING]}px"
+    margin_y=str(spacing_values[int(Spacing.DEFAULT.value)])+"px",
 )
 
 main_page_style = dict(
     padding_top="68px",
+    backgroundColor = Colors.BACKGROUND.value,
+    minHeight = "100vh",          # Asegura que el fondo cubra toda la pantalla
 )
 
 # NAVBAR
 class navbar():
     navbar_style = dict(
-        bg=rx.color("accent", 3),
+        bg=Colors.SECONDARY.value,
         padding=Size.S,
         position="fixed",
         top="0px",
@@ -51,9 +51,15 @@ class navbar():
         heigth=Size.XL
     )
 
+    navbar_button = dict(
+        color = Colors.PRIMARY.value,
+        boxShadow = "none"
+    )
+
     navbar_title_style = dict(
         size="7", 
-        weight="bold"
+        weight="bold",
+        color=Colors.PRIMARY.value
     )
 
     navbar_image_style = dict(
