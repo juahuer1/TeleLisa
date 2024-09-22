@@ -9,6 +9,8 @@ class TextSize(Enum):
     XL = "7"
 
 class Spacing(Enum):
+    NONE = "0"
+    EXTRA_SMALL = "1"
     SMALL = "3"
     DEFAULT = "5"
     BIG = "7"

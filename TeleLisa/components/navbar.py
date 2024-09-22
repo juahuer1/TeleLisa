@@ -11,7 +11,8 @@ def navbar_link(text: str, url: str) -> rx.Component:
             variant="surface",
             size=styles.TextSize.M.value,
             radius="medium",
-            style=styles.navbar.navbar_button
+            style=styles.navbar.navbar_button,
+            color_scheme="brown"
         ),
         href=url,
     )
@@ -35,6 +36,8 @@ def navbar() -> rx.Component:
                     navbar_link("Home", "/#"),
                     navbar_link("Wiki", "/wiki"),
                     spacing=styles.Spacing.DEFAULT.value,
+                    width="100%",
+                    justify="center"
                 ),
                 align="center",
             ),

@@ -25,10 +25,15 @@ def tv() -> rx.Component:
                     variant="soft",
                     color_scheme="brown"
                 ),
-                rx.button("Reproducir"),
+                rx.button(
+                    "Reproducir",
+                    color_scheme="brown",
+                    size="3"
+                ),
                 align="center"
             ),
             rx.text("Descripcion del capítulo..."),
+            spacing=styles.Spacing.SMALL.value,
             style=styles.tv.vstack_style
         ),  
         style=styles.tv.hstack_container_style

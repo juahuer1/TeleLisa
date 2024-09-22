@@ -16,12 +16,13 @@ def header() -> rx.Component:
             rx.heading(
                 "Bienvenido a TeleLisa",
                 size=styles.TextSize.XL.value,
-                color = TextColors.HEADER
             ),
             rx.text(
                 "No has fantaseado con poder ver Los Simpsons 24/7?",
                 size=styles.TextSize.M.value,
-                color = TextColors.BODY
-            )
+            ),
+            spacing=styles.Spacing.EXTRA_SMALL.value
         ),
+        spacing=styles.Spacing.DEFAULT.value,
+        align="center"
     )

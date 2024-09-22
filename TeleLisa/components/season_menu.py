@@ -27,8 +27,8 @@ first_block = rx.hstack(
         lambda temporada: rx.link(
             rx.button(
                 temporada,
-                radius="medium",
                 variant="ghost",
+                color_scheme="brown",
                 size="3"
             ),
             href="#"
@@ -47,8 +47,8 @@ second_block = rx.hstack(
         lambda temporada: rx.link(
             rx.button(
                 temporada,
-                radius="medium",
                 variant="ghost",
+                color_scheme="brown",
                 size="3"
             ),
             href="#"
@@ -67,7 +67,9 @@ def season_menu() -> rx.Component:
                     "arrow-big-left",
                 ),
                 disabled=menuState.show_less_button_disabled,
-                on_click=menuState.showLess
+                on_click=menuState.showLess,
+                size="3",
+                color_scheme="brown"
             ),
             first_block,
             second_block,
@@ -76,7 +78,9 @@ def season_menu() -> rx.Component:
                     "arrow-big-right"
                 ),
                 disabled=menuState.show_more_button_disabled,
-                on_click=menuState.showMore
+                on_click=menuState.showMore,
+                size="3",
+                color_scheme="brown"
             ),
             justify="between",
             align="center",
