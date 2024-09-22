@@ -2,20 +2,20 @@ import reflex as rx
 from enum import Enum
 from .colors import Colors, TextColors
 ######## CONSTANTS
-class TextSize(Enum):
-    S = "2"
-    M = "3"
-    L = "5"
-    XL = "7"
+class TextSizes(Enum):
+    SMALL="1"
+    DEFAULT="3"
+    BIG="5"
+    EXTRA_BIG="7"
 
-class Spacing(Enum):
+class Size(Enum):
     NONE = "0"
     EXTRA_SMALL = "1"
     SMALL = "3"
     DEFAULT = "5"
     BIG = "7"
 
-class Size(Enum):
+class EMSize(Enum):
     XS = "0.8em"
     S = "1em"
     L = "2em"
@@ -32,7 +32,7 @@ body_style = dict(
     max_width="85%",
     align_items="center",
     overflow="auto",
-    margin_y=str(spacing_values[int(Spacing.DEFAULT.value)])+"px",
+    margin_y=str(spacing_values[int(Size.DEFAULT.value)])+"px",
 )
 
 main_page_style = dict(
@@ -45,12 +45,12 @@ main_page_style = dict(
 class navbar():
     navbar_style = dict(
         bg=Colors.SECONDARY.value,
-        padding=Size.S,
+        padding=EMSize.S,
         position="fixed",
         top="0px",
         z_index="999",
         width="100%",
-        heigth=Size.XL
+        heigth=EMSize.XL
     )
 
     navbar_button = dict(
@@ -65,16 +65,24 @@ class navbar():
     )
 
     navbar_image_style = dict(
-        width=Size.L,
+        width=EMSize.L,
         height="auto",
+    )
+
+    vstack_links_style = dict(
+        width="100%",
     )
 
 # FOOTER
 class footer():
+    vstack_container = dict(
+        width="100%",
+    )
+
     footer_container = dict(
         width="100%",
-        padding_left = Size.S,
-        padding_right = Size.S,
+        padding_left = EMSize.S,
+        padding_right = EMSize.S,
     )
 
     powered_by_container = dict(
@@ -94,7 +102,7 @@ class footer():
 # HEADER
 class header():
     avatar_style = dict(
-        margin_left = Size.S,
+        margin_left = EMSize.S,
     )
 
 # TV
@@ -105,7 +113,7 @@ class tv():
     )
 
     vstack_style = dict(
-        margin_left = Size.S,
+        margin_left = EMSize.S,
     )
 
     hstack_container_style = dict(
@@ -121,6 +129,13 @@ class season_menu():
 
     menu_container_style = dict(
         width = "100%",
+    )
+
+# EPISODE VIEW
+class episode_view():
+    header_image_style = dict(
+        width=EMSize.Extra_5, 
+        height="auto"
     )
 
 

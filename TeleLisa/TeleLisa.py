@@ -4,13 +4,15 @@ import reflex as rx
 
 from rxconfig import config
 import TeleLisa.styles.styles as styles
-from TeleLisa.styles.component_styles import BASE_STYLES
+from TeleLisa.styles.global_styles import BASE_STYLES
 from TeleLisa.components.navbar import navbar
 from TeleLisa.components.header import header
 from TeleLisa.components.tv import tv
 from TeleLisa.components.footer import footer
 from TeleLisa.components.season_menu import season_menu
 from TeleLisa.components.episode_view import episode_view
+
+
 
 class State(rx.State):
     """The app state."""
@@ -26,7 +28,7 @@ def index() -> rx.Component:
                 header(),
                 tv(),
                 style=styles.body_style,
-                spacing=styles.Spacing.DEFAULT.value
+                spacing=styles.Size.DEFAULT.value
             ),
         ),
         footer(),
@@ -41,7 +43,7 @@ def wiki() -> rx.Component:
                 season_menu(),   
                 episode_view(),
                 style=styles.body_style,
-                spacing=styles.Spacing.DEFAULT.value
+                spacing=styles.Size.DEFAULT.value
             ),
         ),
         footer(),

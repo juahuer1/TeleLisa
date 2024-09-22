@@ -2,17 +2,15 @@ import reflex as rx
 import TeleLisa.styles.styles as styles
 from TeleLisa.styles.colors import Colors, TextColors
 from rxconfig import config
+from TeleLisa.elements.elements import RxButton
 
 
 def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
-        rx.button(
+        RxButton(
             text,
             variant="surface",
-            size=styles.TextSize.M.value,
-            radius="medium",
             style=styles.navbar.navbar_button,
-            color_scheme="brown"
         ),
         href=url,
     )
@@ -35,9 +33,9 @@ def navbar() -> rx.Component:
                 rx.hstack(
                     navbar_link("Home", "/#"),
                     navbar_link("Wiki", "/wiki"),
-                    spacing=styles.Spacing.DEFAULT.value,
-                    width="100%",
-                    justify="center"
+                    spacing=styles.Size.DEFAULT.value,
+                    justify="center",
+                    style=styles.navbar.vstack_links_style,
                 ),
                 align="center",
             ),

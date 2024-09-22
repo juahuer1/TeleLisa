@@ -17,17 +17,8 @@ BASE_STYLES = {
     },
     rx.heading: {
         "color" : TextColors.HEADER.value
+    },
+    rx.grid: {
+        "width" : "100%"
     }
-    # rx.hstack: {
-    #     "width": "100%"
-    # },
-    # rx.box: {
-    #     "width": "100%"
-    # },
-    # rx.vstack: {
-    #     "width": "100%"
-    # },
-    # rx.flex: {
-    #     "width": "100%"
-    # }
 }

@@ -2,19 +2,19 @@ import reflex as rx
 import TeleLisa.styles.styles as styles
 from TeleLisa.styles.colors import Colors
 from rxconfig import config
+from TeleLisa.elements.elements import RxLink, RxText
 
 def social_link(icon: str, href: str) -> rx.Component:
-    return rx.link(
+    return RxLink(
         rx.icon(icon),
         href=href,
-        is_external=True,
     )
 
 
 def socials() -> rx.Component:
     return rx.flex(
         social_link("github", config.github),
-        spacing=styles.Spacing.SMALL.value,
+        spacing=styles.Size.SMALL.value,
         justify="end",
         style=styles.footer.socials_def
     )
@@ -26,16 +26,18 @@ def footer() -> rx.Component:
             rx.divider(),
             rx.hstack(
                 rx.hstack(
-                    rx.link(
-                        rx.text(
-                            "Powered by",
-                            color = Colors.PRIMARY.value
-                        ), 
-                        href="https://reflex.dev/",
-                        is_external=True
-                    ),
-                    rx.image(
-                        src="/img/reflex.svg",
+                    RxLink(
+                        rx.hstack(
+                            RxText(
+                                "Powered by",
+                                color = Colors.PRIMARY.value
+                            ), 
+                            rx.image(
+                                src="/img/reflex.svg",
+                            ),
+                            align="center"
+                        ),    
+                        href="https://reflex.dev/",             
                     ),
                     style=styles.footer.powered_by_container
                 ),
@@ -43,7 +45,7 @@ def footer() -> rx.Component:
                 justify="between",
                 style=styles.footer.socials_container
             ),
-            width="100%",
+            style=styles.footer.vstack_container
         ),
         style=styles.footer.footer_container
     )

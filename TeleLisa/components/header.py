@@ -2,6 +2,7 @@ import reflex as rx
 import TeleLisa.styles.styles as styles
 from TeleLisa.styles.colors import Colors, TextColors
 from rxconfig import config
+from TeleLisa.elements.elements import RxText
 
 
 def header() -> rx.Component:
@@ -15,14 +16,13 @@ def header() -> rx.Component:
         rx.vstack(
             rx.heading(
                 "Bienvenido a TeleLisa",
-                size=styles.TextSize.XL.value,
+                size=styles.Size.BIG.value,
             ),
-            rx.text(
+            RxText(
                 "No has fantaseado con poder ver Los Simpsons 24/7?",
-                size=styles.TextSize.M.value,
             ),
-            spacing=styles.Spacing.EXTRA_SMALL.value
+            spacing=styles.Size.EXTRA_SMALL.value
         ),
-        spacing=styles.Spacing.DEFAULT.value,
+        spacing=styles.Size.DEFAULT.value,
         align="center"
     )

@@ -1,5 +1,6 @@
 import reflex as rx
 import TeleLisa.styles.styles as styles
+from TeleLisa.elements.elements import RxButton
 
 class menuState(rx.State):
     first_items_display: str = "flex"
@@ -24,19 +25,16 @@ temporadas = [f"Temporada {i}" for i in range(1, 11)]
 first_block = rx.hstack(
     rx.foreach(
         temporadas,
-        lambda temporada: rx.link(
-            rx.button(
+        lambda temporada: 
+            RxButton(
                 temporada,
                 variant="ghost",
-                color_scheme="brown",
-                size="3"
             ),
-            href="#"
-        )
+
     ),
     display=menuState.first_items_display,
     justify="center",
-    spacing=styles.Spacing.DEFAULT.value
+    spacing=styles.Size.DEFAULT.value
 )
 
 temporadas = [f"Temporada {i}" for i in range(11, 21)]
@@ -44,43 +42,35 @@ temporadas = [f"Temporada {i}" for i in range(11, 21)]
 second_block = rx.hstack(
     rx.foreach(
         temporadas,
-        lambda temporada: rx.link(
-            rx.button(
+        lambda temporada:
+            RxButton(
                 temporada,
                 variant="ghost",
-                color_scheme="brown",
-                size="3"
             ),
-            href="#"
-        )
     ),
     display=menuState.last_items_display,
     justify="center",
-    spacing=styles.Spacing.DEFAULT.value
+    spacing=styles.Size.DEFAULT.value
 )
 
 def season_menu() -> rx.Component:
     return rx.box(
         rx.hstack(
-            rx.button(
+            RxButton(
                 rx.icon(
                     "arrow-big-left",
                 ),
                 disabled=menuState.show_less_button_disabled,
                 on_click=menuState.showLess,
-                size="3",
-                color_scheme="brown"
             ),
             first_block,
             second_block,
-            rx.button(
+            RxButton(
                 rx.icon(
                     "arrow-big-right"
                 ),
                 disabled=menuState.show_more_button_disabled,
                 on_click=menuState.showMore,
-                size="3",
-                color_scheme="brown"
             ),
             justify="between",
             align="center",

@@ -1,24 +1,28 @@
 import reflex as rx
 import TeleLisa.styles.styles as styles
+from TeleLisa.elements.elements import RxGrid, RxText
 
 def episode_view()->rx.Component:
     return rx.box(
-        rx.grid(
-            rx.foreach(
+        RxGrid(
+            data=rx.foreach(
                 rx.Var.range(6),
                 lambda i: rx.card(
                     rx.hstack(
-                        rx.image(src="/img/lisa-feliz.jpg", width=styles.Size.Extra_5, height="auto"),
+                        rx.image(
+                            src="/img/lisa-feliz.jpg", 
+                            style=styles.episode_view.header_image_style
+                        ),
                         rx.vstack(
-                            rx.heading(f"Chapter {i + 1}"),
-                            rx.text("En este capítulo, exploraremos los fundamentos de la programación, incluyendo los conceptos básicos de variables, estructuras de control y tipos de datos. Al finalizar, estarás listo para escribir tus primeros programas en Python.")
+                            rx.heading(
+                                f"Chapter {i + 1}",
+                                size=styles.TextSizes.BIG.value
+                            ),
+                            RxText("En este capítulo, exploraremos los fundamentos de la programación, incluyendo los conceptos básicos de variables, estructuras de control y tipos de datos. Al finalizar, estarás listo para escribir tus primeros programas en Python.")
                         )
                         
                     )
                 ),
             ),
-            columns="3",
-            spacing=styles.Spacing.DEFAULT.value,
-            width="100%",
         )
     )
