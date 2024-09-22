@@ -2,6 +2,8 @@ import reflex as rx
 from enum import Enum
 from .colors import Colors, TextColors
 ######## CONSTANTS
+BTN_SIZE = "3"
+
 class TextSizes(Enum):
     SMALL="1"
     DEFAULT="3"
@@ -55,7 +57,7 @@ class navbar():
 
     navbar_button = dict(
         color = Colors.PRIMARY.value,
-        boxShadow = "none"
+        # boxShadow = "none"
     )
 
     navbar_title_style = dict(

@@ -18,7 +18,7 @@ def RxLink(data, href: str, is_external: bool = False, **kwargs) -> rx.Component
         **kwargs
     )
 
-def RxButton(data, color_scheme: str = "brown", size: str = "3", **kwargs) -> rx.Component:
+def RxButton(data, color_scheme: str = "brown", size: str = styles.BTN_SIZE, **kwargs) -> rx.Component:
     return rx.button(
         data,
         color_scheme=color_scheme,
@@ -26,11 +26,12 @@ def RxButton(data, color_scheme: str = "brown", size: str = "3", **kwargs) -> rx
         **kwargs
     )
 
-def RxSelect(data, color_scheme: str = "brown", variant: str = "soft", placeholder: str = "Seleccione...", **kwargs) -> rx.Component:
+def RxSelect(data, color_scheme: str = "brown", variant: str = "soft", size: str = styles.BTN_SIZE, placeholder: str = "Seleccione...", **kwargs) -> rx.Component:
     return rx.select(
         data,
         color_scheme=color_scheme,
         variant=variant,
+        size="3",
         placeholder=placeholder,
         **kwargs
     )
