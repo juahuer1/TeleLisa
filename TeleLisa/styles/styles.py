@@ -33,7 +33,6 @@ spacing_values = [4,8,12,16,24,32,40,48,64]
 body_style = dict(
     max_width="85%",
     align_items="center",
-    overflow="auto",
     margin_y=str(spacing_values[int(Size.DEFAULT.value)])+"px",
 )
 
@@ -99,6 +98,12 @@ class footer():
 
     socials_def = dict(
         width="100%",
+    )
+
+    social_icon_styles = dict(
+        _hover = {
+            "color" : Colors.PRIMARY.value
+        }
     )
 
 # HEADER

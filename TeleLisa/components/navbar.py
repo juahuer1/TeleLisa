@@ -2,17 +2,18 @@ import reflex as rx
 import TeleLisa.styles.styles as styles
 from TeleLisa.styles.colors import Colors, TextColors
 from rxconfig import config
-from TeleLisa.elements.elements import RxButton
+from TeleLisa.elements.elements import RxButton, RxLink
 
 
 def navbar_link(text: str, url: str) -> rx.Component:
-    return rx.link(
+    return RxLink(
         RxButton(
             text,
             variant="surface",
             style=styles.navbar.navbar_button,
         ),
         href=url,
+        is_external=False
     )
 
 def navbar() -> rx.Component:

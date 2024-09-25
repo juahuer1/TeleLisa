@@ -6,8 +6,12 @@ from TeleLisa.elements.elements import RxLink, RxText
 
 def social_link(icon: str, href: str) -> rx.Component:
     return RxLink(
-        rx.icon(icon),
+        rx.icon(
+            icon,
+            style=styles.footer.social_icon_styles
+        ),
         href=href,
+        
     )
 
 
@@ -30,14 +34,14 @@ def footer() -> rx.Component:
                         rx.hstack(
                             RxText(
                                 "Powered by",
-                                color = Colors.PRIMARY.value
+                                color = Colors.PRIMARY.value,
                             ), 
-                            rx.image(
+                            rx.image(   
                                 src="/img/reflex.svg",
                             ),
                             align="center"
                         ),    
-                        href="https://reflex.dev/",             
+                        href="https://reflex.dev/",  
                     ),
                     style=styles.footer.powered_by_container
                 ),

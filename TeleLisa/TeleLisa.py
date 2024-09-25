@@ -11,6 +11,7 @@ from TeleLisa.components.tv import tv
 from TeleLisa.components.footer import footer
 from TeleLisa.components.season_menu import season_menu
 from TeleLisa.components.episode_view import episode_view
+import TeleLisa.styles.fonts as fonts
 
 
 
@@ -52,7 +53,8 @@ def wiki() -> rx.Component:
 
 
 app = rx.App(
-    style=BASE_STYLES
+    style=BASE_STYLES,
+    stylesheets=fonts.STYLESHEETS
 )
 app.add_page(index)
 app.add_page(wiki)

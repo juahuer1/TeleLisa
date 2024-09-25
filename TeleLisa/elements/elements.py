@@ -10,7 +10,7 @@ def RxGrid(data, columns: str = "3", spacing: str = styles.Size.DEFAULT.value, w
         **kwargs
     )
 
-def RxLink(data, href: str, is_external: bool = False, **kwargs) -> rx.Component:
+def RxLink(data, href: str, is_external: bool = True, **kwargs) -> rx.Component:
     return rx.link(
         data,
         href=href,
