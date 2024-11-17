@@ -55,27 +55,63 @@ second_block = rx.hstack(
 
 def season_menu() -> rx.Component:
     return rx.box(
-        rx.hstack(
-            RxButton(
-                rx.icon(
-                    "arrow-big-left",
+        # rx.desktop_only(
+        #     rx.hstack(
+        #         RxButton(
+        #             rx.icon(
+        #                 "arrow-big-left",
+        #             ),
+        #             disabled=menuState.show_less_button_disabled,
+        #             on_click=menuState.showLess,
+        #         ),
+        #         first_block,
+        #         second_block,
+        #         RxButton(
+        #             rx.icon(
+        #                 "arrow-big-right"
+        #             ),
+        #             disabled=menuState.show_more_button_disabled,
+        #             on_click=menuState.showMore,
+        #         ),
+        #         justify="between",
+        #         align="center",
+        #         style=styles.season_menu.menu_style,
+        #     ),
+        #     style=styles.season_menu.menu_container_style,
+        # ),
+        # rx.mobile_and_tablet(
+            rx.box(
+                rx.hstack(
+                    RxButton(
+                        rx.icon(
+                            "arrow-big-left",
+                        ),
+                        disabled=menuState.show_less_button_disabled,
+                        on_click=menuState.showLess,
+                    ),
+
+                    rx.grid(
+                        rx.foreach(
+                            temporadas,
+                            lambda temporada:
+                                RxButton(
+                                    temporada,
+                                    variant="ghost",
+                                ),
+                        ),
+                        columns=rx.breakpoints(initial="2", xs="2", sm="4", md="7", lg="10"),
+                        spacing="4",
+                    ),
+
+                    RxButton(
+                        rx.icon(
+                            "arrow-big-right",
+                        ),
+                        disabled=menuState.show_less_button_disabled,
+                        on_click=menuState.showLess,
+                    ),
                 ),
-                disabled=menuState.show_less_button_disabled,
-                on_click=menuState.showLess,
-            ),
-            first_block,
-            second_block,
-            RxButton(
-                rx.icon(
-                    "arrow-big-right"
-                ),
-                disabled=menuState.show_more_button_disabled,
-                on_click=menuState.showMore,
-            ),
-            justify="between",
-            align="center",
-            style=styles.season_menu.menu_style,
-        ),
-        style=styles.season_menu.menu_container_style,
+            )
+        # )
     )
 

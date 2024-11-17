@@ -4,6 +4,7 @@ import TeleLisa.styles.fonts as fonts
 
 
 BASE_STYLES = {
+    "breakpoints": ["520px", "768px", "1024px", "1280px", "1640px"],
     "font_family": fonts.Type.DEFAULT,
     "font_weight": fonts.Weight.LIGHT,
     rx.button: {

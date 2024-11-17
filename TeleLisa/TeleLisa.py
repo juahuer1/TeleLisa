@@ -54,7 +54,7 @@ def wiki() -> rx.Component:
 
 app = rx.App(
     style=BASE_STYLES,
-    stylesheets=fonts.STYLESHEETS
+    stylesheets=fonts.STYLESHEETS,
 )
 app.add_page(index)
 app.add_page(wiki)
