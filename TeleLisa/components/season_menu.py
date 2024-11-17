@@ -37,7 +37,7 @@ first_block = rx.hstack(
     spacing=styles.Size.DEFAULT.value
 )
 
-temporadas = [f"Temporada {i}" for i in range(11, 21)]
+temporadas = [f"Temporada {i}" for i in range(11, 20)]
 
 second_block = rx.hstack(
     rx.foreach(
@@ -55,63 +55,39 @@ second_block = rx.hstack(
 
 def season_menu() -> rx.Component:
     return rx.box(
-        # rx.desktop_only(
-        #     rx.hstack(
-        #         RxButton(
-        #             rx.icon(
-        #                 "arrow-big-left",
-        #             ),
-        #             disabled=menuState.show_less_button_disabled,
-        #             on_click=menuState.showLess,
-        #         ),
-        #         first_block,
-        #         second_block,
-        #         RxButton(
-        #             rx.icon(
-        #                 "arrow-big-right"
-        #             ),
-        #             disabled=menuState.show_more_button_disabled,
-        #             on_click=menuState.showMore,
-        #         ),
-        #         justify="between",
-        #         align="center",
-        #         style=styles.season_menu.menu_style,
-        #     ),
-        #     style=styles.season_menu.menu_container_style,
-        # ),
-        # rx.mobile_and_tablet(
-            rx.box(
                 rx.hstack(
                     RxButton(
                         rx.icon(
                             "arrow-big-left",
                         ),
                         disabled=menuState.show_less_button_disabled,
-                        on_click=menuState.showLess,
+                        # on_click=menuState.showLess,
                     ),
 
-                    rx.grid(
+                    rx.flex(
                         rx.foreach(
                             temporadas,
                             lambda temporada:
                                 RxButton(
                                     temporada,
                                     variant="ghost",
+                                    white_space = "nowrap",
                                 ),
                         ),
-                        columns=rx.breakpoints(initial="2", xs="2", sm="4", md="7", lg="10"),
-                        spacing="4",
+                        spacing=styles.Size.MEDIUM.value,
+                        style=styles.season_menu.flex,
                     ),
 
                     RxButton(
                         rx.icon(
                             "arrow-big-right",
                         ),
-                        disabled=menuState.show_less_button_disabled,
-                        on_click=menuState.showLess,
+                        disabled=False,
+                        # on_click=menuState.showLess,
                     ),
+                    align="center",
+                    style=styles.season_menu.hstack,
+                    spacing=styles.Size.MEDIUM.value,
                 ),
             )
-        # )
-    )
 

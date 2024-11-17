@@ -15,6 +15,7 @@ class Size(Enum):
     EXTRA_SMALL = "1"
     SMALL = "3"
     DEFAULT = "5"
+    MEDIUM = "6"
     BIG = "7"
 
 class EMSize(Enum):
@@ -126,14 +127,15 @@ class tv():
 
 # SEASON MENU
 class season_menu():
-    menu_style = dict(
-        white_space="nowrap",
-        width="100%"
+    flex = dict(
+        flex_wrap="wrap",
+        justify_content="center",
     )
 
-    menu_container_style = dict(
-        width = "100%",
+    hstack = dict(
+        width="100%",
     )
+
 
 # EPISODE VIEW
 class episode_view():
