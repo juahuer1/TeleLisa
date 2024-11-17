@@ -6,23 +6,26 @@ from TeleLisa.elements.elements import RxText
 
 
 def header() -> rx.Component:
-    return rx.hstack(
-        rx.avatar(
-            src="/img/lisa-feliz.jpg",
-            size="8",
-            radius="full",
-            style=styles.header.avatar_style,
-        ),
-        rx.vstack(
-            rx.heading(
-                "Bienvenido a TeleLisa",
-                size=styles.Size.BIG.value,
+    return rx.box(
+        rx.hstack(
+            rx.avatar(
+                src="/img/lisa-feliz.jpg",
+                size="8",
+                radius="full",
+                style=styles.header.avatar_style,
             ),
-            RxText(
-                "No has fantaseado con poder ver Los Simpsons 24/7?",
+            rx.vstack(
+                rx.heading(
+                    "Bienvenido a TeleLisa",
+                    size=styles.Size.BIG.value,
+                ),
+                RxText(
+                    "No has fantaseado con poder ver Los Simpsons 24/7?",
+                ),
+                spacing=styles.Size.EXTRA_SMALL.value
             ),
-            spacing=styles.Size.EXTRA_SMALL.value
-        ),
-        spacing=styles.Size.DEFAULT.value,
-        align="center"
+            spacing=styles.Size.DEFAULT.value,
+            align="center"
+        )    
     )
+    

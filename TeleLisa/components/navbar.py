@@ -41,32 +41,32 @@ def navbar() -> rx.Component:
                 align="center",
             ),
         ),
-        # rx.mobile_and_tablet(
-        #     rx.hstack(
-        #         rx.hstack(
-        #             rx.image(
-        #                 src=dict.Site.FAVICON,
-        #                 style=styles_mobile.navbar_image_style
-        #             ),
-        #             rx.heading(
-        #                 dict.Site.TITLE,
-        #                 style=styles_mobile.navbar_title_style
-        #             ),
-        #             align="center",
-        #         ),
-        #         rx.menu.root(
-        #             rx.menu.trigger(
-        #                 rx.icon("menu", size=30)
-        #             ),
-        #             rx.menu.content(
-        #                 rx.menu.item("Home"),
-        #                 rx.menu.item("Wiki"),
-        #             ),
-        #             justify="end",
-        #         ),
-        #         justify="between",
-        #         align="center",
-        #     ),
-        # ),
+        rx.mobile_and_tablet(
+            rx.hstack(
+                rx.hstack(
+                    rx.image(
+                        src=config.favicon,
+                        style=styles.navbar.navbar_image_style
+                    ),
+                    rx.heading(
+                        config.app_name,
+                        style=styles.navbar.navbar_title_style
+                    ),
+                    align="center",
+                ),
+                rx.menu.root(
+                    rx.menu.trigger(
+                        rx.icon("menu", size=30)
+                    ),
+                    rx.menu.content(
+                        rx.menu.item("Home"),
+                        rx.menu.item("Wiki"),
+                    ),
+                    justify="end",
+                ),
+                justify="between",
+                align="center",
+            ),
+        ),
         style=styles.navbar.navbar_style
     )

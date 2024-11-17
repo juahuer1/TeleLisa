@@ -76,24 +76,21 @@ class navbar():
 
 # FOOTER
 class footer():
+    text = dict(
+        white_space = "nowrap"
+    )
+
+    image = dict(
+        width = EMSize.XXL.value,
+        height = "auto",
+    )
+
+    flex_container = dict(
+        width="100%",
+    )
+
     vstack_container = dict(
-        width="100%",
-    )
-
-    footer_container = dict(
-        width="100%",
-        padding_left = EMSize.S,
-        padding_right = EMSize.S,
-    )
-
-    powered_by_container = dict(
-        display="flex",
-        align_items="center",
-        width="100%"
-    )
-
-    socials_container = dict(
-        width="100%",
+        padding=EMSize.S.value,
     )
 
     socials_def = dict(
@@ -114,9 +111,9 @@ class header():
 
 # TV
 class tv():
-    tv_video_style = dict(
-        flex_shrink = "0",  # No se encogerá
-        flex_grow = "0",    # No crecerá
+    flex = dict(
+        flex_wrap="wrap",
+        width="100%",
     )
 
     vstack_style = dict(

@@ -11,7 +11,6 @@ def social_link(icon: str, href: str) -> rx.Component:
             style=styles.footer.social_icon_styles
         ),
         href=href,
-        
     )
 
 
@@ -28,28 +27,24 @@ def footer() -> rx.Component:
     return rx.el.footer(
         rx.vstack(
             rx.divider(),
-            rx.hstack(
+            rx.flex(
                 rx.hstack(
-                    RxLink(
-                        rx.hstack(
-                            RxText(
-                                "Powered by",
-                                color = Colors.PRIMARY.value,
-                            ), 
-                            rx.image(   
-                                src="/img/reflex.svg",
-                            ),
-                            align="center"
-                        ),    
-                        href="https://reflex.dev/",  
+                    RxText(
+                        "Powered by",
+                        color = Colors.PRIMARY.value,
+                        style=styles.footer.text,
                     ),
-                    style=styles.footer.powered_by_container
+                    rx.image(   
+                        src = "/img/reflex.svg",
+                        style=styles.footer.image,
+                    ),
+                    spacing=styles.Size.SMALL.value,
+                    align='center'
                 ),
                 socials(),
-                justify="between",
-                style=styles.footer.socials_container
+                style=styles.footer.flex_container,
+                justify='between',
             ),
-            style=styles.footer.vstack_container
         ),
-        style=styles.footer.footer_container
+        style=styles.footer.vstack_container,
     )

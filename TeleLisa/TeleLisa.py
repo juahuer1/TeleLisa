@@ -29,7 +29,7 @@ def index() -> rx.Component:
                 header(),
                 tv(),
                 style=styles.body_style,
-                spacing=styles.Size.DEFAULT.value
+                spacing=styles.Size.BIG.value
             ),
         ),
         footer(),
