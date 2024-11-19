@@ -144,5 +144,10 @@ class episode_view():
         height="auto"
     )
 
+    flex = dict(
+        flex_wrap="wrap",
+        justify_content="center",
+    )
+
 
 ######## STYLES MOBILE

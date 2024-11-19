@@ -18,7 +18,7 @@ def navbar_link(text: str, url: str) -> rx.Component:
 
 def navbar() -> rx.Component:
     return rx.box(
-        rx.desktop_only(
+        rx.tablet_and_desktop(
             rx.hstack(
                 rx.hstack(
                     rx.image(
@@ -41,7 +41,7 @@ def navbar() -> rx.Component:
                 align="center",
             ),
         ),
-        rx.mobile_and_tablet(
+        rx.mobile_only(
             rx.hstack(
                 rx.hstack(
                     rx.image(
