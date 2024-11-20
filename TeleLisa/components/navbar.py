@@ -61,6 +61,8 @@ def navbar() -> rx.Component:
                     rx.menu.content(
                         rx.menu.item("Home"),
                         rx.menu.item("Wiki"),
+                        color_scheme="brown",
+                        variant="soft"
                     ),
                     justify="end",
                 ),
